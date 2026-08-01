@@ -61,8 +61,38 @@ const squares =[]
       }
     }
   }
-  function checkForWin(){
+  /**check the number 2048 for win*/
 
+  function checkForWin(){
+    for(let i=0;i<squares.length;i++){
+      if(parseInt(squares[i].innerHTML === 2048)){
+        resultDisplay.innerHTML = "congratulation, you have  WON !!!"
+        document.removeEventListener('keydown',control)
+      }
+    }
+  }
+
+  /**
+   * check if there are no zero on the board to lose
+   */
+  function checkForGameOver(){
+    let zeros =0
+    for(let i=0;i<squares.length;i++){
+      if(squares[i].innerHTML ==0){
+        zeros++;
+      }
+    }
+    if(zeros ===0){
+      resultDisplay.innerHTML = "YOU HAVE LOST";
+      document.removeEventListener("keydown",control)
+    }
+  }
+  function addColours(){
+    for(let i=0;i<squares.length;i++){
+      if(squares[i].innerHTML ===0){
+        
+      }
+    }
   }
   function combineColumn(){
     for(let i=0;i<12;i++){
